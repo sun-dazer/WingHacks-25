@@ -53,7 +53,7 @@ export default function InGameCustody() {
   //defines the initial screen
   return (
     <div>
-      <Image src="/images/judge hit.png" alt="judge" width={500} height={500} />
+      <Image src="/images/judge 1.png" alt="judge" width={500} height={500} />
       <h1>Hello. I hear you are seeking custody of your child. What are you arguing about?</h1>
       <h2>Choose an option.</h2>
       <p>I just hate who he is as a person! He is crazy and I hate his guts. That's why I divorced him.</p>
