@@ -51,52 +51,60 @@ export default function Settings() {
 
   return (
     <div className="sky-background-container">
-      <div className="transparent-box">
-        <Image
-          src="/images/back.png"
-          className="inline back-img"
-          alt="back"
-          width={25}
-          height={25}
-          onClick={handleBackClick}
-        />
-        <h1 className="inline h1">Getting Started</h1>
-        {/* <button onClick={handleNextButtonClick}>Go to Basic Info Page</button> */}
-        <div>
-          <label className="label">What&apos;s Your Name?</label>
-          <input
-            type="text"
-            value={nameInput}
-            onChange={handleNameChange}
-            className="text-center w-[300px] shadow-md"
-            placeholder="Name"
+      <div className="transparent-box flex flex-row">
+        <div className="relative flex-1">
+          <Image className="absolute right-20 top-20" src="/images/lawyer 2.png" alt="Gator" width={200} height={200} />
+        </div>
+        <div className="flex-3">
+          <Image
+            src="/images/back.png"
+            className="inline back-img"
+            alt="back"
+            width={25}
+            height={25}
+            onClick={handleBackClick}
           />
-          <label className="label">Location</label>
-          <select value={locationInput} onChange={handleLocationChange} className="w-[300px] text-center">
-            <option value="null">Select</option>
-            <option value="florida">Florida</option>
-            <option value="georgia">Georgia</option>
-          </select>
-          <label className="label">What&apos;s Your Case?</label>
+          <h1 className="inline h1">Getting Started</h1>
+          {/* <button onClick={handleNextButtonClick}>Go to Basic Info Page</button> */}
           <div>
-            <button
-              className={`button ${caseInput === 'custody' ? 'selected' : ''}`}
-              onClick={handleCustodyButtonClick}
-              type="button"
-            >
-              Custody
-            </button>
-            <button
-              className={`button ${caseInput === 'divorce' ? 'selected' : ''}`}
-              onClick={handleDivorceButtonClick}
-              type="button"
-            >
-              Divorce
-            </button>
+            <label className="label">What&apos;s Your Name?</label>
+            <input
+              type="text"
+              value={nameInput}
+              onChange={handleNameChange}
+              className="text-center w-[300px] shadow-md"
+              placeholder="Name"
+            />
+            <label className="label">Location</label>
+            <select value={locationInput} onChange={handleLocationChange} className="w-[300px] text-center shadow-md">
+              <option value="null">*select*</option>
+              <option value="florida">Florida</option>
+              <option value="georgia">Georgia</option>
+            </select>
+            <label className="label">What&apos;s Your Case?</label>
+            <div>
+              <button
+                className={`button ${caseInput === 'custody' ? 'selected' : ''}`}
+                onClick={handleCustodyButtonClick}
+                type="button"
+              >
+                Custody
+              </button>
+              <button
+                className={`button ${caseInput === 'divorce' ? 'selected' : ''}`}
+                onClick={handleDivorceButtonClick}
+                type="button"
+              >
+                Divorce
+              </button>
+            </div>
+            <div className="mb-[40px]">
+              <button className="button" onClick={handleStartButtonClick}>Start Game</button>
+            </div>
           </div>
-          <div className="mb-[40px]">
-            <button className="button" onClick={handleStartButtonClick}>Start Game</button>
-          </div>
+        </div>
+        <div className="relative flex-1">
+          <Image className="absolute bottom-20 left-20" src="/images/gator 3.png" alt="Gator" width={200} height={200} />
         </div>
       </div>
     </div>
