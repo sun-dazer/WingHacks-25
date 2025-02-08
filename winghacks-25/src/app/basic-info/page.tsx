@@ -1,5 +1,7 @@
 "use client";
-
+import React, { useState } from 'react';
+import './styles.css';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 export default function BasicInfo() {
@@ -9,10 +11,21 @@ export default function BasicInfo() {
     router.push('/scenario');
   };
 
+  const handleBackClick = () => {
+    router.push('/settings');
+  };
+
   return (
     <div>
-      <h1>Basic Info Page</h1>
-      <button onClick={handleButtonClick}>Go to Scenario Page</button>
+      <Image
+        src="/images/back.png"
+        className="back-img"
+        alt="back"
+        width={25}
+        height={25}
+        onClick={handleBackClick}
+      />
+      <h1 className='h1'>Tutorial</h1>
     </div>
   );
 }
