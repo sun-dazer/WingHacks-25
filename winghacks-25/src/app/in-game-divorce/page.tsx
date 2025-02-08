@@ -169,7 +169,7 @@ export default function InGameCustody() {
   //defines the initial screen
   return (
     <div>
-      <Image src="/images/judge hit.png" alt="judge" width={500} height={500} />
+      <Image src="/images/judge 1.png" alt="judge" width={500} height={500} />
       <h1>Hello, Ms. . I hear you are seeking a divorce.</h1>
       <button onClick={() => setScreen("resided")}>Yes, that is correct.</button>
     </div>
