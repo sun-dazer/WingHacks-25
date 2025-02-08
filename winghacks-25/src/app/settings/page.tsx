@@ -43,7 +43,7 @@ export default function Settings() {
 
   return (
     <div>
-      <h1>Getting Started</h1>
+      <h1 className="h1">Getting Started</h1>
       <button onClick={handleNextButtonClick}>Go to Basic Info Page</button>
       <form>
         <label className="label">What's Your Name?</label>
@@ -51,7 +51,7 @@ export default function Settings() {
           type="text"
           value={nameInput}
           onChange={handleNameChange}
-          placeholder="Name"
+          placeholder="                        Name"
         />
         <label className="label">Location</label>
         <select value={locationInput} onChange={handleLocationChange}>
@@ -61,11 +61,23 @@ export default function Settings() {
         </select>
         <label className="label">What's Your Case?</label>
         <div>
-          <button className="button" value={caseInput} onClick={handleCustodyButtonClick}>Custody</button>
-        <button className="button" value={caseInput} onClick={handleDivorceButtonClick}>Divorce</button>
+          <button
+            className={`button ${caseInput === 'custody' ? 'selected' : ''}`}
+            onClick={handleCustodyButtonClick}
+            type="button"
+          >
+            Custody
+          </button>
+          <button
+            className={`button ${caseInput === 'divorce' ? 'selected' : ''}`}
+            onClick={handleDivorceButtonClick}
+            type="button"
+          >
+            Divorce
+          </button>
         </div>
         <div>
-        <button className="button" onClick={handleStartButtonClick}>Start Game</button>
+          <button className="button" onClick={handleStartButtonClick}>Start Game</button>
         </div>
       </form>
     </div>
