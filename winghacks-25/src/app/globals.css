@@ -72,6 +72,11 @@ body {
   animation: optionsFloatIn 1s ease-out 3s forwards; /* Animation with delay */
 }
 
+.animate-float-in {
+  opacity: 0; 
+  animation: optionsFloatIn ease-out 1s forwards;
+}
+
 @keyframes fadeOut {
   from {
     opacity: 1;

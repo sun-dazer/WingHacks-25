@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="sky-background-container" >
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <Image src="/images/titlescreen.gif" alt="Titlescreen" width={800} height={500} />
+        <Image className="animate-float-in" src="/images/titlescreen.gif" alt="Titlescreen" width={800} height={500} />
         <div
           className="relative w-32 h-52 cursor-pointer mt-4"
           onClick={handleButtonClick}
