@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 
-export default function Home() {
+export default function Scenario() {
   const router = useRouter();
 
   const handleButtonClick = () => {
@@ -11,8 +11,8 @@ export default function Home() {
 
   return (
     <div>
-      <h1>WingHacks 2025</h1>
-      <button onClick={handleButtonClick}>Go to Settings</button>
+      <h1>Scenario Page</h1>
+      <button onClick={handleButtonClick}>Go to Scenario Page (needs to be changed based on what the settings were)</button>
     </div>
   );
 }
