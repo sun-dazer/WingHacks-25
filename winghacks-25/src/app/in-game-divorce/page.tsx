@@ -1,9 +1,13 @@
 "use client";
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
+import { useUser } from '../UserContext';
 
-export default function InGameCustody() {
+export default function InGameDivorce() {
+  const router = useRouter();
+  const { name } = useUser();
   //manages toggling between screens
   const [screen, setScreen] = useState<string | null>(null);
 
@@ -168,10 +172,22 @@ export default function InGameCustody() {
 
   //defines the initial screen
   return (
-    <div>
-      <Image src="/images/judge 1.png" alt="judge" width={500} height={500} />
-      <h1>Hello, Ms. . I hear you are seeking a divorce.</h1>
-      <button onClick={() => setScreen("resided")}>Yes, that is correct.</button>
+    <div className="flex justify-center mt-20">
+      <div className="flex flex-col">
+        <div className="flex-1 flex flex-row">
+          <div className="flex-1">
+            <Image src="/images/judge 1.png" alt="judge" width={500} height={500} />
+          </div>
+          <div className="flex-1">
+            <button onClick={() => setScreen("resided")}>Yes, that is correct.</button>
+          </div>
+        </div>
+        <div className="flex-1 relative">
+          <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80" src="/images/text box.png" alt="text box" width={661} height={500} />
+          <h1 className="absolute top-10 left-0 w-full text-center text-black text-2xl">
+            Hello, Ms. {name}. I hear you are seeking a divorce. </h1>
+        </div>
+      </div>
     </div>
   );
 }
