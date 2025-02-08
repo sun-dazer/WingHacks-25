@@ -10,15 +10,94 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Pixelify Sans", serif;
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-move-up {
+  animation: moveUp 0.5s ease-out;
+}
+
+@keyframes floatRight {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes textboxFloatRight {
+  from {
+    transform: translateX(-10px) scaleX(1.25) scaleY(0.8);
+  }
+  to {
+    transform: translateX(0) scaleX(1.25) scaleY(0.8);
+  }
+}
+
+@keyframes optionsFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-right {
+  animation: floatRight 1s ease-out;
+}
+
+.animate-textbox-float-right{
+  transform: scaleX(1.25) scaleY(0.8); 
+  animation: textboxFloatRight 1s ease-out;
+}
+
+.animate-options-float-in {
+  opacity: 0; 
+  animation: optionsFloatIn 1s ease-out 3s forwards; /* Animation with delay */
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+.sky-background-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-image: url('/images/start bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }

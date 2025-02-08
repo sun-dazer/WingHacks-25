@@ -1,0 +1,79 @@
+.h1 {
+    font-size: 36px;
+    margin: 32px;
+    padding: 0;
+}
+
+.inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* .card {
+    width: 1000%;
+    max-width: 2000px;
+    height: 80%;
+    max-height: 600px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+} */
+
+.label {
+    text-align: center;
+    display: block;
+    font-size: 24px;
+    margin: 10px;
+}
+
+.input .select {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    borderRadius: 5px;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    display: block;
+}
+
+.button {
+    background: lightgray;
+    color: black;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    font-size: 20px;
+}
+
+.button.selected {
+    background: darkgray;
+    color: black;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    font-size: 20px;
+}
