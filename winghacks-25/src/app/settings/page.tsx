@@ -41,11 +41,11 @@ export default function Settings() {
     // }
   };
 
-  const handleNameChange = (event) => {
+  const handleNameChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setNameInput(event.target.value);
   };
 
-  const handleLocationChange = (event) => {
+  const handleLocationChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setLocationInput(event.target.value);
   };
 
@@ -72,7 +72,7 @@ export default function Settings() {
             placeholder="Name"
           />
           <label className="label">Location</label>
-          <select value={locationInput} onChange={handleLocationChange}>
+          <select value={locationInput} onChange={handleLocationChange} className="w-[300px] text-center">
             <option value="null">Select</option>
             <option value="florida">Florida</option>
             <option value="georgia">Georgia</option>
