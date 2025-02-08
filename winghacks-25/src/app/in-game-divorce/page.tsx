@@ -51,6 +51,18 @@ export default function InGameCustody() {
     );
   }
 
+  if (screen === "mental?") {
+    return (
+      <div>
+        <h1>Is there anything else you would like to add?</h1>
+        <p>My spouse has also been mentally spiraling for a few years now. He's going crazy!</p>
+        <button onClick={() => setScreen("mental-yes")}>Option 1</button>
+        <p>No, Your Honor. </p>
+        <button onClick={() => setScreen("financial")}>Option 2</button>
+      </div>
+    );
+  }
+
   if (screen === "resided") {
     return (
       <div>
