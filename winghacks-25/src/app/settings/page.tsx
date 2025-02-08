@@ -10,10 +10,6 @@ export default function Settings() {
   const [locationInput, setLocation] = useState('');
   const [caseInput, setCase] = useState('');
 
-  const handleNextButtonClick = () => {
-    router.push('/basic-info');
-  };
-
   const handleBackClick = () => {
     router.push('/');
   };
@@ -30,13 +26,14 @@ export default function Settings() {
 
   const handleStartButtonClick = () => {
     console.log(caseInput);
-    if (caseInput === 'custody') {
-      router.push('/in-game-custody');
-    } else if (caseInput === 'divorce') {
-      router.push('/in-game-divorce');
-    } else {
-      alert('Please select a case type.');
-    }
+    router.push('/basic-info');
+    // if (caseInput === 'custody') {
+    //   router.push('/in-game-custody');
+    // } else if (caseInput === 'divorce') {
+    //   router.push('/in-game-divorce');
+    // } else {
+    //   alert('Please select a case type.');
+    // }
   };
 
   const handleNameChange = (event) => {
@@ -51,14 +48,14 @@ export default function Settings() {
     <div>
       <Image
         src="/images/back.png"
-        className="back-img"
+        className="inline back-img"
         alt="back"
         width={25}
         height={25}
         onClick={handleBackClick}
       />
-      <h1 className="h1">Getting Started</h1>
-      <button onClick={handleNextButtonClick}>Go to Basic Info Page</button>
+      <h1 className="inline h1">Getting Started</h1>
+      {/* <button onClick={handleNextButtonClick}>Go to Basic Info Page</button> */}
       <div>
         <label className="label">What's Your Name?</label>
         <input
