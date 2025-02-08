@@ -28,3 +28,46 @@ body {
 .animate-move-up {
   animation: moveUp 0.5s ease-out;
 }
+
+@keyframes floatRight {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes textboxFloatRight {
+  from {
+    transform: translateX(-10px) scaleX(1.25) scaleY(0.8);
+  }
+  to {
+    transform: translateX(0) scaleX(1.25) scaleY(0.8);
+  }
+}
+
+@keyframes optionsFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-right {
+  animation: floatRight 1s ease-out;
+}
+
+.animate-textbox-float-right{
+  transform: scaleX(1.25) scaleY(0.8); 
+  animation: textboxFloatRight 1s ease-out;
+}
+
+.animate-options-float-in {
+  opacity: 0; 
+  animation: optionsFloatIn 1s ease-out 3s forwards; /* Animation with delay */
+}
