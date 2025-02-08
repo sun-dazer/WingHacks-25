@@ -1,11 +1,17 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import {useUser} from '../UserContext';
 
 export default function BasicInfo() {
   const router = useRouter();
+  const { name } = useUser();
+
+  useEffect(() => {
+    console.log(name);
+  }, [name]);
 
   const handleButtonClick = () => {
     router.push('/scenario');

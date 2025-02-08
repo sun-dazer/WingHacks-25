@@ -9,9 +9,9 @@
     vertical-align: middle;
 }
 
-body,
-html {
+body {
     height: 100%;
+    width: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -50,7 +50,7 @@ html {
     width: 100%;
     padding: 6px 10px;
     margin: 10px 0;
-    borderRadius: 5px;
+    border-radius: 5px;
     border: 1px solid lightgray;
     box-sizing: border-box;
     display: block;
@@ -77,3 +77,11 @@ html {
     margin: 15px;
     font-size: 20px;
 }
+
+.transparent-box {
+    background-color: rgba(255, 255, 255, 0.6); /* White with 80% opacity */
+    padding: 20px;
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow for better visibility */
+  }
