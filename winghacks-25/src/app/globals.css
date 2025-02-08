@@ -22,3 +22,16 @@ body {
   background: var(--background);
   font-family: "Pixelify Sans", serif;
 }
+
+@keyframes moveUp {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-move-up {
+  animation: moveUp 0.5s ease-out;
+}
