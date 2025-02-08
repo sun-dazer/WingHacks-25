@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import './styles.css';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 export default function Settings() {
@@ -11,6 +12,10 @@ export default function Settings() {
 
   const handleNextButtonClick = () => {
     router.push('/basic-info');
+  };
+
+  const handleBackClick = () => {
+    router.push('/');
   };
 
   const handleCustodyButtonClick = () => {
@@ -24,6 +29,7 @@ export default function Settings() {
   };
 
   const handleStartButtonClick = () => {
+    console.log(caseInput);
     if (caseInput === 'custody') {
       router.push('/in-game-custody');
     } else if (caseInput === 'divorce') {
@@ -43,9 +49,17 @@ export default function Settings() {
 
   return (
     <div>
+      <Image
+        src="/images/back.png"
+        className="back-img"
+        alt="back"
+        width={25}
+        height={25}
+        onClick={handleBackClick}
+      />
       <h1 className="h1">Getting Started</h1>
       <button onClick={handleNextButtonClick}>Go to Basic Info Page</button>
-      <form>
+      <div>
         <label className="label">What's Your Name?</label>
         <input
           type="text"
@@ -79,7 +93,7 @@ export default function Settings() {
         <div>
           <button className="button" onClick={handleStartButtonClick}>Start Game</button>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
