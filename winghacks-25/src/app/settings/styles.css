@@ -1,0 +1,41 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.label {
+    text-align: left;
+    display: block;
+}
+
+.input .select {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    borderRadius: 5px;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    display: block;
+}
+
+.button {
+    background: lightgray;
+    color: black;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
