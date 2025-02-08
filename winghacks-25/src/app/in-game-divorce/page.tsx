@@ -9,8 +9,17 @@ import { useUser } from '../UserContext';
 export default function InGameDivorce() {
   const router = useRouter();
   const { name } = useUser();
+  const [fadeOut, setFadeOut] = useState(false);
+
   //manages toggling between screens
   const [screen, setScreen] = useState<string | null>(null);
+
+  const handleButtonClick = () => {
+    setFadeOut(true);
+    setTimeout(() => {
+      setScreen("resided");
+    }, 500); // Match the duration of the fade-out animation
+  };
 
   //************************ ALL THE SCREENS DEFINED ****************************** */
   if (screen === "resided-hotel") {
@@ -104,20 +113,20 @@ export default function InGameDivorce() {
           <div className="flex-1 mr-10">
             <Image className="animate-float-right" src="/images/judge 2.png" alt="judge" width={500} height={500} />
           </div>
-          <div className="flex-1 flex flex-col">
-            <div className="relative animate-options-float-in flex-1">
-              <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble skinny.png" alt="text box" width={661} height={500} />
-              <button className="absolute top-0 left-0 text-center text-black text-2xl mt-5" onClick={() => setScreen("resided")}>Yes, that is correct.</button>
+          <div className="flex-1 flex flex-col animate-options-float-in">
+            <div className="relative flex-1">
+              <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
+              <button className="absolute top-0 left-0 text-center text-black mt-5" onClick={() => setScreen("resided-wrong")}>I have a hotel receipt showing I stayed in Miami for a week six months ago.</button>
             </div>
-            <div className="relative animate-options-float-in flex-1">
-              <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble skinny.png" alt="text box" width={661} height={500} />
-              <button className="absolute top-0 left-0 text-center text-black text-2xl mt-5" onClick={() => setScreen("resided")}>Yes, that is correct.</button>
+            <div className="relative flex-1">
+              <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
+              <button className="absolute top-0 left-0 text-center text-blackmt-5" onClick={() => setScreen("continue-resided")}>I have a lease agreement, utility bills in my name dating back over six months, and my Florida driver’s license showing my current address.</button>
             </div>
           </div>
         </div>
         <div className="flex-1 relative">
           <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80 animate-textbox-float-right " src="/images/text box.png" alt="text box" width={661} height={500} />
-          <h1 className="absolute top-10 left-0 w-full text-center text-black text-2xl animate-float-right">Hello, Ms. {name}. I hear you are seeking a divorce. </h1>
+          <h1 className="absolute top-10 left-0 w-full text-center text-black text-2xl animate-float-right">Ms. {name}, can you provide proof that you have resided in Florida for at least six months prior to filing for divorce?</h1>
         </div>
       </div>
     </div>
@@ -187,7 +196,7 @@ export default function InGameDivorce() {
 
   //initial screen
   return (
-    <div className="flex justify-center mt-20">
+    <div className={`flex justify-center mt-20 ${fadeOut ? 'fade-out' : ''}`}>
       <div className="flex flex-col">
         <div className="flex-1 flex flex-row">
           <div className="flex-1 mr-10">
@@ -196,12 +205,12 @@ export default function InGameDivorce() {
           <div className="flex-1">
             <div className="relative animate-options-float-in">
               <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble skinny.png" alt="text box" width={661} height={500} />
-              <button className="absolute top-0 left-0 text-center text-black text-2xl mt-5" onClick={() => setScreen("resided")}>Yes, that is correct.</button>
+              <button className="absolute top-0 left-0 text-center text-black text-2xl mt-5" onClick={handleButtonClick}>Yes, that is correct.</button>
             </div>
           </div>
         </div>
         <div className="flex-1 relative">
-          <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80 animate-textbox-float-right " src="/images/text box.png" alt="text box" width={661} height={500} />
+          <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80 animate-textbox-float-right" src="/images/text box.png" alt="text box" width={661} height={500} />
           <h1 className="absolute top-10 left-0 w-full text-center text-black text-2xl animate-float-right">Hello, Ms. {name}. I hear you are seeking a divorce. </h1>
         </div>
       </div>
