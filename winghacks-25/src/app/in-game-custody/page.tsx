@@ -19,7 +19,7 @@ export default function InGameCustody() {
   if (screen === "wrong") {
     return (
       <div>
-        <h1>I'm sorry, I can't hear your case. You need an actual legal basis.</h1>
+        <h1>I&apos;m sorry, I can&apos;t hear your case. You need an actual legal basis.</h1>
         <button onClick={() => setScreen("initial")}>Try again</button>
       </div>
     );
@@ -38,7 +38,6 @@ export default function InGameCustody() {
   if (screen === "initial") {
     return (
     <div>
-      <h1>Hello. I hear you are seeking custody of your child. What are you arguing about?</h1>
       <h2>Choose an option.</h2>
       <p>I just hate who he is as a person! He is crazy and I hate his guts. That&apos;s why I divorced him.</p>
       <button className="animate-move-up" onClick={() => setScreen("wrong")}>Option 1</button>
@@ -55,13 +54,7 @@ export default function InGameCustody() {
     <div>
       <Image src="/images/judge 1.png" alt="judge" width={500} height={500} />
       <h1>Hello. I hear you are seeking custody of your child. What are you arguing about?</h1>
-      <h2>Choose an option.</h2>
-      <p>I just hate who he is as a person! He is crazy and I hate his guts. That's why I divorced him.</p>
-      <button onClick={() => setScreen("wrong")}>Option 1</button>
-      <p>I believe he has a drug problem that stops him from making good judgments about our child.</p>
-      <button onClick={() => setScreen("proving-drug")}>Option 2</button>
-      <p>He just moved to a new house and the new lady he’s living with is insane! Sometimes I see scars on my son after he comes back and he’s always crying.</p>
-      <button onClick={() => setScreen("living-with")}>Option 3</button>
+      <button onClick={() => setScreen("initial")}>Continue</button>
     </div>
   );
 }
