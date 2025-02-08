@@ -5,12 +5,6 @@ import { useEffect } from 'react';
 import dotenv from 'dotenv';
 dotenv.config();
 
-module.exports = {
-  env: {
-    GEMINI_API_KEY: process.env.GEMINI_API_KEY,
-  },
-};
-
 export default function Scenario() {
   const router = useRouter();
 
