@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Home() {
   const router = useRouter();
@@ -10,9 +11,9 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>WingHacks 2025</h1>
-      <button onClick={handleButtonClick}>Go to Settings</button>
+    <div className="flex flex-col items-center justify-center min-h-screen ">
+      <Image src="/images/titlescreen.gif" alt="Titlescreen" width={800} height={500} />
+      <button onClick={handleButtonClick}>Start</button>
     </div>
   );
 }
