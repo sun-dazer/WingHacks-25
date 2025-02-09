@@ -36,10 +36,10 @@ export default function Scenario() {
   };
   
   const locations: Locations = {
-    house1: { top: -15, bottom: 147, left: 665, right: 1085, background: "/images/house inside.png", message: " Step 1: Complete the Paperwork \nBegin by preparing the necessary documents, including the petition.\nWhat is a petition? A petition is a formal written request asking the court to take legal action"},
-    circuit: { top: 9, bottom: 123, left: 186, right: 366, background: "/images/panda inside.png", message: "Step 2: File Your Case\nOnce you have completed the petition, you must file it with the clerk of the circuit court in your local jurisdiction. This officially opens your case."},
-    shops: { top: 261, bottom: 372, left: 399, right: 846, background: "/images/phone inside.png", message: "Step 3: Notify the Other Party\nAfter filing, you are required to notify the other party. This process, known as ‘Service’, ensures that the other party has been formally informed of the case."},
-    lawyer: { top: 450, bottom: 576, left: 930, right: 1143, background: "/images/law inside.png", message: "Step 4: Mandatory Disclosure\nBoth parties are required to exchange specific financial and legal documents as part of the Mandatory Disclosure process."},
+    house1: { top: -15, bottom: 147, left: 665, right: 1085, background: "/images/house_inside.png", message: " Step 1: Complete the Paperwork \nBegin by preparing the necessary documents, including the petition.\nWhat is a petition? A petition is a formal written request asking the court to take legal action"},
+    circuit: { top: 9, bottom: 123, left: 186, right: 366, background: "/images/panda_inside.png", message: "Step 2: File Your Case\nOnce you have completed the petition, you must file it with the clerk of the circuit court in your local jurisdiction. This officially opens your case."},
+    shops: { top: 261, bottom: 372, left: 399, right: 846, background: "/images/phone_inside.png", message: "Step 3: Notify the Other Party\nAfter filing, you are required to notify the other party. This process, known as ‘Service’, ensures that the other party has been formally informed of the case."},
+    lawyer: { top: 450, bottom: 576, left: 930, right: 1143, background: "/images/law_inside.png", message: "Step 4: Mandatory Disclosure\nBoth parties are required to exchange specific financial and legal documents as part of the Mandatory Disclosure process."},
     court: { top: 537, bottom: 618, left: 210, right: 390, background: "/images/courtroom.png", message: "Step 5: Schedule Your Court Date\nThe court process typically includes a hearing for any motions filed, and a final hearing for cases that are uncontested or resolved by default or trial for contested cases"}};
 
 
