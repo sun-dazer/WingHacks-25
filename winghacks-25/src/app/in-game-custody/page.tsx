@@ -35,7 +35,7 @@ handleButtonClick={handleButtonClick} buttonText="Order Drug Test" fontSize="10"
   }
 
   if (screen === "order-drug-test") {
-    <ReusablePage screenName="end" bottomText="The test came back positive! The court has deemed your partner unfit to care for your child." handleButtonClick={handleButtonClick} fontSize="15"/>
+    <ReusablePage screenName="end" bottomText="The test came back positive! The court has deemed your partner unfit to care for your child." handleButtonClick={handleButtonClick} fontSize="15" buttonText="Order Drug Test"/>
   }
 
   if (screen === "initial-wrong") {
