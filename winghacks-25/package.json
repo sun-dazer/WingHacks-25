@@ -2,14 +2,14 @@
   "name": "winghacks-25",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://gator-grievances.us",
+  "homepage": "https://sun-dazer.github.io/WingHacks-25",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
