@@ -1,0 +1,22 @@
+.large-font {
+    font-size: 48px; /* Adjust the size as needed */
+    font-weight: bold; /* Optional: Make the text bold */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.gator-jump {
+    animation: float 2s ease-in-out infinite;
+    /* animation-duration: 1.5s;
+    animation-iteration-count: infinite; */
+}
