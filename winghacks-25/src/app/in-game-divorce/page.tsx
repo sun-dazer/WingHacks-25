@@ -24,8 +24,9 @@ export default function InGameDivorce() {
   //************************ ALL THE SCREENS DEFINED ****************************** */
   if (screen === "resided-hotel") {
     return (
-      <div className={`flex justify-center mt-20 ${fadeOut ? 'fade-out' : ''}`}>
-      <div className="flex flex-col">
+      <div className="outside-courtroom-background-container">
+      <div className={`flex justify-center ${fadeOut ? 'fade-out' : ''}`}>
+      <div className="flex flex-col mt-[150px]">
         <div className="flex-1 flex flex-row">
           <div className="flex-1 mr-10">
             <Image className="animate-float-right" src="/images/lawyer 1.png" alt="judge" width={500} height={500} />
@@ -54,13 +55,15 @@ export default function InGameDivorce() {
         </div>
       </div>
     </div>
+    </div>
     );
   }
 
   if (screen === "continue-resided") {
     return (
-      <div className={`flex justify-center mt-20 ${fadeOut ? 'fade-out' : ''}`}>
-      <div className="flex flex-col">
+      <div className="outside-courtroom-background-container">
+      <div className={`flex justify-center ${fadeOut ? 'fade-out' : ''}`}>
+      <div className="flex flex-col mt-20 ">
         <div className="flex-1 flex flex-row">
           <div className="flex-1 mr-10">
             <Image className="animate-float-right" src="/images/lawyer 1.png" alt="judge" width={500} height={500} />
@@ -89,13 +92,15 @@ export default function InGameDivorce() {
         </div>
       </div>
       </div>
+      </div>
     );
   }
 
   if (screen === "no-fault-wrong") {
     return (
-    <div className={`flex justify-center mt-20 ${fadeOut ? 'fade-out' : ''}`}>
-      <div className="flex flex-col">
+      <div className="outside-courtroom-background-container">
+    <div className={`flex justify-center ${fadeOut ? 'fade-out' : ''}`}>
+      <div className="flex flex-col mt-20">
         <div className="flex-1 flex flex-row">
           <div className="flex-1 mr-10">
             <Image className="animate-float-right" src="/images/lawyer 1.png" alt="judge" width={500} height={500} />
@@ -120,8 +125,9 @@ export default function InGameDivorce() {
         </div>
         <div className="flex-1 relative">
           <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80 animate-textbox-float-right " src="/images/text box.png" alt="text box" width={661} height={500} />
-          <h1 className="absolute top-7 text-[14px] mt-[5px] left-0 w-full text-center text-black text-[20px] animate-float-right">Without more details, I cannot accept this as sufficient grounds. Please elaborate on the conflicts that have led to this conclusion. Florida is a no-fault divorce state, meaning you only need to state that the marriage is &quot;irretrievably broken&quot; or that one of the parties is mentally incapacitated. You don&apos;t need  to prove fault or wrongdoing by the other party.</h1>
+          <h1 className="absolute top-7 text-[14px] mt-[5px] left-0 w-full text-center text-black animate-float-right">Without more details, I cannot accept this as sufficient grounds. Please elaborate on the conflicts that have led to this conclusion. Florida is a no-fault divorce state, meaning you only need to state that the marriage is &quot;irretrievably broken&quot; or that one of the parties is mentally incapacitated. You don&apos;t need  to prove fault or wrongdoing by the other party.</h1>
         </div>
+      </div>
       </div>
       </div>
     );
@@ -183,8 +189,9 @@ export default function InGameDivorce() {
 
   if (screen === "resided") {
     return (
-      <div className={`flex justify-center mt-20 ${fadeOut ? 'fade-out' : ''}`}>
-      <div className="flex flex-col">
+      <div className="courtroom-background-container">
+      <div className={`flex justify-center ${fadeOut ? 'fade-out' : ''}`}>
+      <div className="flex flex-col mt-[150px] ">
         <div className="flex-1 flex flex-row">
           <div className="flex-1 mr-10">
             <Image className="animate-float-right" src="/images/judge 2.png" alt="judge" width={500} height={500} />
@@ -205,6 +212,7 @@ export default function InGameDivorce() {
           <h1 className="absolute top-10 left-0 w-full text-center text-black text-2xl animate-float-right">Ms. {name}, can you provide proof that you have resided in Florida for at least six months prior to filing for divorce?</h1>
         </div>
       </div>
+    </div>
     </div>
     );
   }
@@ -272,8 +280,9 @@ export default function InGameDivorce() {
 
   //initial screen
   return (
-    <div className={`flex justify-center mt-20 ${fadeOut ? 'fade-out' : ''}`}>
-      <div className="flex flex-col">
+    <div className="courtroom-background-container">
+    <div className={`flex justify-center ${fadeOut ? 'fade-out' : ''}`}>
+      <div className="flex flex-col mt-[150px]">
         <div className="flex-1 flex flex-row">
           <div className="flex-1 mr-10">
             <Image className="animate-float-right" src="/images/judge 2.png" alt="judge" width={500} height={500} />
@@ -290,6 +299,7 @@ export default function InGameDivorce() {
           <h1 className="absolute top-10 left-0 w-full text-center text-black text-2xl animate-float-right">Hello, Ms. {name}. I hear you are seeking a divorce. </h1>
         </div>
       </div>
+    </div>
     </div>
   );
 }
