@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useUser } from '../UserContext';
 import ReusablePage from './reusable-page';
 import ReusableOptionPage from './reusable-option-page';
+import { useRouter } from 'next/navigation';
 
 export default function InGameDivorce() {
   const router = useRouter();
@@ -21,8 +22,6 @@ export default function InGameDivorce() {
       setFadeOut(false);
       setScreen(screenName);
     }, 700); 
-    
-    
   };
 
   //************************ ALL THE SCREENS DEFINED ****************************** */
@@ -163,11 +162,7 @@ export default function InGameDivorce() {
   }
 
   if (screen === "end") {
-    return (
-      <div>
-        <h1>The end :)</h1>
-      </div>
-    );
+    router.push("/end");
   }
 
   //initial screen
