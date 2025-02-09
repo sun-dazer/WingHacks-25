@@ -65,7 +65,40 @@ export default function Scenario() {
 
   return (
     <div className="map-background-container">
-      <Image src="/path/to/image.png" alt="Description" width={100} height={100} />
+      <Image
+        className="GatorSpawn"
+        src={`/images/${direction === "idle" ? "pixil-frame-0 (2).png" : `${direction}.gif`}`} // Dynamically load idle or movement GIF based on direction
+        alt="Idle"
+        width={150}
+        height={35}
+        style={{
+          top: `${spritePosition.top}px`,
+          left: `${spritePosition.left}px`,
+        }}
+      />
+
+      {showPopup && (
+        <div className="popup-container">
+          <Image
+            className="popup-box"
+            src="/images/text box larger.png" 
+            alt="Text Box"
+            width={300}
+            height={100}
+          />
+          <div className="popup-text">
+            This is some sample text inside the popup box.
+          </div>
+
+          <Image
+            className="excl-mark"
+            src="/images/excl mark.png"
+            alt="Excl"
+            width={30}
+            height={30}
+          />
+        </div>
+      )}
     </div>
   );
 }
