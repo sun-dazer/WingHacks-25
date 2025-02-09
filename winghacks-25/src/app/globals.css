@@ -31,18 +31,22 @@ body {
 
 @keyframes floatRight {
   from {
+    opacity: 0;
     transform: translateX(-10px);
   }
   to {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 
 @keyframes textboxFloatRight {
   from {
+    opacity: 0;
     transform: translateX(-10px) scaleX(1.25) scaleY(0.8);
   }
   to {
+    opacity: 1;
     transform: translateX(0) scaleX(1.25) scaleY(0.8);
   }
 }
@@ -58,13 +62,15 @@ body {
   }
 }
 
-.animate-float-right {
-  animation: floatRight 1s ease-out;
+.animate-text-float-right {
+  opacity: 0;
+  animation: floatRight 1s ease-out forwards;
 }
 
 .animate-textbox-float-right{
-  transform: scaleX(1.25) scaleY(0.8); 
-  animation: textboxFloatRight 1s ease-out;
+  transform: scaleX(1.25) scaleY(0.8);
+  opacity: 0;
+  animation: textboxFloatRight 1s ease-out forwards;
 }
 
 .animate-options-float-in {
@@ -74,7 +80,7 @@ body {
 
 .animate-float-in {
   opacity: 0; 
-  animation: optionsFloatIn ease-out 1s forwards;
+  animation: optionsFloatIn 1s ease-out 3s forwards;
 }
 
 @keyframes fadeOut {
@@ -107,6 +113,25 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-color: #a0ed68;
+}
+
+.courtroom-background-container {
+  position: relative;
+  height: 100vh;
+  background-image: url('/images/courtroom.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.outside-courtroom-background-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url('/images/courtroom 2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .overlay-content {
