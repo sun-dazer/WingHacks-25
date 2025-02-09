@@ -18,7 +18,9 @@ export default function InGameDivorce() {
     setTimeout(() => {
       setFadeOut(false);
       setScreen(screenName);
-    }, 500); 
+    }, 700); 
+    
+    
   };
 
   //************************ ALL THE SCREENS DEFINED ****************************** */
@@ -65,8 +67,8 @@ export default function InGameDivorce() {
       <div className={`flex justify-center ${fadeOut ? 'fade-out' : ''}`}>
       <div className="flex flex-col mt-20 ">
         <div className="flex-1 flex flex-row">
-          <div className="flex-1 mr-10">
-            <Image className="animate-float-right" src="/images/lawyer 1.png" alt="judge" width={500} height={500} />
+          <div className="flex-1 mr-10 animate-float-right">
+            <Image src="/images/lawyer 1.png" alt="judge" width={500} height={500} />
           </div>
           <div className="flex-1 flex flex-col animate-options-float-in">
             <div className="relative flex-1">
@@ -212,7 +214,9 @@ export default function InGameDivorce() {
       <div className="flex flex-col mt-[150px] ">
         <div className="flex-1 flex flex-row">
           <div className="flex-1 mr-10">
-            <Image className="animate-float-right" src="/images/judge 2.png" alt="judge" width={500} height={500} />
+            <div className="animate-text-float-right">
+            <Image src="/images/judge 2.png" alt="judge" width={500} height={500} />
+            </div>
           </div>
           <div className="flex-1 flex flex-col animate-options-float-in">
             <div className="relative flex-1">
@@ -226,8 +230,12 @@ export default function InGameDivorce() {
           </div>
         </div>
         <div className="flex-1 relative">
-          <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80 animate-textbox-float-right " src="/images/text box.png" alt="text box" width={661} height={500} />
-          <h1 className="absolute top-10 left-0 w-full text-center text-black text-2xl animate-float-right">Ms. {name}, can you provide proof that you have resided in Florida for at least six months prior to filing for divorce?</h1>
+          <div className="animate-textbox-float-right">
+          <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80" src="/images/text box.png" alt="text box" width={661} height={500} />
+          </div>
+          <div className="animate-text-float-right">
+          <h1 className="absolute top-10 left-0 w-full text-center text-black text-2xl">Ms. {name}, can you provide proof that you have resided in Florida for at least six months prior to filing for divorce?</h1>
+        </div>
         </div>
       </div>
     </div>
@@ -303,7 +311,7 @@ export default function InGameDivorce() {
       <div className="flex flex-col mt-[150px]">
         <div className="flex-1 flex flex-row">
           <div className="flex-1 mr-10">
-            <Image className="animate-float-right" src="/images/judge 2.png" alt="judge" width={500} height={500} />
+            <Image className="animate-text-float-right" src="/images/judge 2.png" alt="judge" width={500} height={500} />
           </div>
           <div className="flex-1">
             <div className="relative animate-options-float-in">
@@ -314,7 +322,7 @@ export default function InGameDivorce() {
         </div>
         <div className="flex-1 relative">
           <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80 animate-textbox-float-right" src="/images/text box.png" alt="text box" width={661} height={500} />
-          <h1 className="absolute top-10 left-0 w-full text-center text-black text-2xl animate-float-right">Hello, Ms. {name}. I hear you are seeking a divorce. </h1>
+          <h1 className="absolute top-10 left-0 w-full text-center text-black text-2xl animate-text-float-right">Hello, Ms. {name}. I hear you are seeking a divorce. </h1>
         </div>
       </div>
     </div>
