@@ -15,7 +15,7 @@ export default function Scenario() {
     let newTop = spritePosition.top;
     let newLeft = spritePosition.left;
 
-    switch (e.key) {
+    switch (e.key) { // handles cases
       case "ArrowUp":
         newTop -= 3; 
         setDirection("up");
@@ -36,6 +36,10 @@ export default function Scenario() {
         setDirection("right");
         setIsMoving(true); 
         break;
+      case "a": // secret dance button
+        setDirection("dance"); 
+        setIsMoving(true);
+        break;
       case " ":
         setShowPopup(false); 
         break;
@@ -53,6 +57,10 @@ export default function Scenario() {
     }
   };
 
+  const handleNextClick = () => {
+    console.log("Next button clicked");
+  };
+
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
@@ -67,7 +75,7 @@ export default function Scenario() {
     <div className="map-background-container">
       <Image
         className="GatorSpawn"
-        src={`/images/${direction === "idle" ? "pixil-frame-0 (2).png" : `${direction}.gif`}`} // Dynamically load idle or movement GIF based on direction
+        src={`/images/${direction === "idle" ? "pixil-frame-0 (2).png" : `${direction}.gif`}`} 
         alt="Idle"
         width={150}
         height={35}
@@ -101,6 +109,17 @@ export default function Scenario() {
           />
         </div>
       )}
+      <div className="next-button-container" onClick={handleNextClick}>
+        <Image
+          className="next-button"
+          src="/images/forward.png"
+          alt="Next"
+          width={50}
+          height={50}
+        />
+      </div>
     </div>
   );
 }
+
+
