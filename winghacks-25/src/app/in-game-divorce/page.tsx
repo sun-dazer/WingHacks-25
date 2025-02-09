@@ -138,7 +138,33 @@ export default function InGameDivorce() {
 
   if (screen === "financial") {
     return (
-      <ReusableOptionPage screenName1="financial-continue" screenName2="financial-wrong" bottomText="Have you submitted a full and accurate disclosure of your financial assets, debts, income, and expenses?" handleButtonClick={handleButtonClick} fontSize1="10" fontSize2="10" text1="I have provided my tax returns, bank statements, investment records, and a list of all assets and debts, including those in my name and joint accounts." text2="I provided my financial statement, but I didn't list one of my bank accounts because it's separate from my marital finances."/>
+      <div className="courtroom-background-container">
+                <div className={`flex justify-center ${fadeOut ? 'fade-out' : ''}`}>
+                <div className="flex flex-col mt-[150px] ">
+                  <div className="flex-1 flex flex-row">
+                    <div className="flex-1 mr-10">
+                      <div className="animate-text-float-right">
+                        <Image src="/images/judge 2.png" alt="judge" width={500} height={500} />
+                      </div>
+                    </div>
+                    <div className="flex-1 flex flex-col animate-options-float-in">
+                      <div className="relative flex-1">
+                        <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
+                        <button className={`text-[15px] absolute top-0 left-0 text-center text-black mt-5`} onClick={() => handleButtonClick("financial-continue")}>I have my tax returns, bank statements, investment records, and a list of all assets and debts.</button>
+                      </div>
+                      <div className="relative flex-1">
+                        <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
+                        <button className={`text-[15px] absolute top-0 left-0 text-center text-black mt-[7px]`} onClick={() => handleButtonClick("financial-wrong")}>I have my financial statement but not one of my bank accounts because it's separate from my marital finances.</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex-1 relative">
+                    <Image className="animate-textbox-float-right absolute top-0 left-0" src="/images/text box.png" alt="text box" width={661} height={500} />
+                      <h1 className="animate-text-float-right absolute top-[30px] left-0 w-full text-center text-black text-2xl">Have you submitted a full and accurate disclosure of your financial assets, debts, income, and expenses?</h1>
+                  </div>
+                </div>
+              </div>
+              </div>
     );
   }
 
@@ -156,7 +182,7 @@ export default function InGameDivorce() {
 
   if (screen === "equitable-distribution") {
     return (
-      <ReusableOptionPage screenName1="end" screenName2="equitable-distribution-wrong" bottomText="Florida follows equitable distribution. Can you provide evidence supporting your claim regarding the value of the marital assets?" handleButtonClick={handleButtonClick} fontSize1="10" fontSize2="15" text1="I have included a recent appraisal report, property deeds, and financial statements detailing the value of our marital assets." text2="I believe our family home is worth $500,000. I saw some similar houses online."/>
+      <ReusableOptionPage screenName1="end" screenName2="equitable-distribution-wrong" bottomText="Florida follows equitable distribution. Can you provide evidence supporting your claim regarding the value of the marital assets?" handleButtonClick={handleButtonClick} fontSize1="15" fontSize2="15" text1="I have included a recent appraisal report, property deeds, and financial statements." text2="I believe our family home is worth $500,000. I saw some similar houses online."/>
     );
   }
 
