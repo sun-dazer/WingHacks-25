@@ -9,13 +9,11 @@ import "./styles.css";
 
 export default function Scenario() {
   const router = useRouter();
-  const [quizQuestions, setQuizQuestions] = useState<string[]>([]);
-  const [quizAnswers, setQuizAnswers] = useState<string[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [userAnswer, setUserAnswer] = useState<string>("");
   const [score, setScore] = useState<number>(0);
   const [showQuestion, setShowQuestion] = useState<boolean>(false);
-
+  const [showPopup, setShowPopup] = useState(true); 
   const imagePaths = [
     "/images/witness panda.png",
     "/images/witness polar.png",
@@ -104,6 +102,29 @@ export default function Scenario() {
       <button className="absolute top-2 right-2 bg-light-grey text-black px-4 py-2 rounded" onClick={() => router.push("/")}>
         Restart
       </button>
+      {showPopup && (
+              <div className="popup-container" onClick={() => setShowPopup(false)}>
+                <Image
+                  className="popup-box"
+                  src="/images/text box larger.png" 
+                  alt="Text Box"
+                  width={300}
+                  height={100}
+                />
+                <div className="popup-text">
+                  You made it to Quiz Village! Congrats! Here, you can practice your knowledge of Florida divorce law. Click on the witnesses to start the quiz. Beware! Incorrect answers lose 1 point.
+                  Click on this box to exit.
+                </div>
+      
+                <Image
+                  className="excl-mark"
+                  src="/images/excl mark.png"
+                  alt="Excl"
+                  width={30}
+                  height={30}
+                />
+              </div>
+            )}
     </div>
   );
 }
