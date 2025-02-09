@@ -32,8 +32,19 @@ export default function InGameDivorce() {
           </div>
           <div className="flex-1 flex flex-col animate-options-float-in">
             <div className="relative flex-1">
-              <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/wood sign light.png" alt="text box" width={200} height={500} />
-              <button className="absolute top-0 left-0 text-center text-black mt-5" onClick={() => handleButtonClick("resided")}>Try Again</button>
+            <Image
+            className="absolute top-[100px] left-[60px] w-[125px] h-[50px]"
+            src="/images/wood sign light.png"
+            alt="text box"
+            width={100}
+            height={500}
+          />
+          <button
+            className="absolute inset-0 flex items-center justify-center text-center text-black"
+            onClick={() => handleButtonClick("resided")}
+          >
+            Try Again
+          </button>
             </div>
           </div>
         </div>
@@ -48,20 +59,70 @@ export default function InGameDivorce() {
 
   if (screen === "continue-resided") {
     return (
-      <div>
-        <h1>Thank you. These documents sufficiently establish your residency.</h1>
-        <p>Florida requires that one or both spouses must have resided in Florida for at least six months prior to filing for divorce.</p>
-        <button onClick={() => setScreen("no-fault")}>Continue</button>
+      <div className={`flex justify-center mt-20 ${fadeOut ? 'fade-out' : ''}`}>
+      <div className="flex flex-col">
+        <div className="flex-1 flex flex-row">
+          <div className="flex-1 mr-10">
+            <Image className="animate-float-right" src="/images/lawyer 1.png" alt="judge" width={500} height={500} />
+          </div>
+          <div className="flex-1 flex flex-col animate-options-float-in">
+            <div className="relative flex-1">
+            <Image
+            className="absolute top-[100px] left-[60px] w-[125px] h-[50px]"
+            src="/images/wood sign light.png"
+            alt="text box"
+            width={100}
+            height={500}
+          />
+          <button
+            className="absolute inset-0 flex items-center justify-center text-center text-black"
+            onClick={() => handleButtonClick("no-fault")}
+          >
+            Continue
+          </button>
+            </div>
+          </div>
+        </div>
+        <div className="flex-1 relative">
+          <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80 animate-textbox-float-right " src="/images/text box.png" alt="text box" width={661} height={500} />
+          <h1 className="absolute top-7 left-0 w-full text-center text-black text-[20px] animate-float-right">Thank you. These documents sufficiently establish your residency. Florida requires that one or both spouses must have resided in Florida for at least six months prior to filing for divorce.</h1>
+        </div>
+      </div>
       </div>
     );
   }
 
   if (screen === "no-fault-wrong") {
     return (
-      <div>
-        <h1>Without more details, I cannot accept this as sufficient grounds. Please elaborate on the conflicts that have led to this conclusion.</h1>
-        <p> Florida is a no-fault divorce state, meaning you only need to state that the marriage is &quot;irretrievably broken&quot; or that one of the parties is mentally incapacitated. You don&apos;t need  to prove fault or wrongdoing by the other party.</p>
-        <button onClick={() => setScreen("no-fault")}>Try Again</button>
+    <div className={`flex justify-center mt-20 ${fadeOut ? 'fade-out' : ''}`}>
+      <div className="flex flex-col">
+        <div className="flex-1 flex flex-row">
+          <div className="flex-1 mr-10">
+            <Image className="animate-float-right" src="/images/lawyer 1.png" alt="judge" width={500} height={500} />
+          </div>
+          <div className="flex-1 flex flex-col animate-options-float-in">
+            <div className="relative flex-1">
+            <Image
+            className="absolute top-[100px] left-[60px] w-[125px] h-[50px]"
+            src="/images/wood sign light.png"
+            alt="text box"
+            width={100}
+            height={500}
+          />
+          <button
+            className="absolute inset-0 flex items-center justify-center text-center text-black"
+            onClick={() => handleButtonClick("no-fault")}
+          >
+            Try Again
+          </button>
+            </div>
+          </div>
+        </div>
+        <div className="flex-1 relative">
+          <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80 animate-textbox-float-right " src="/images/text box.png" alt="text box" width={661} height={500} />
+          <h1 className="absolute top-7 text-[14px] mt-[5px] left-0 w-full text-center text-black text-[20px] animate-float-right">Without more details, I cannot accept this as sufficient grounds. Please elaborate on the conflicts that have led to this conclusion. Florida is a no-fault divorce state, meaning you only need to state that the marriage is &quot;irretrievably broken&quot; or that one of the parties is mentally incapacitated. You don&apos;t need  to prove fault or wrongdoing by the other party.</h1>
+        </div>
+      </div>
       </div>
     );
   }
@@ -135,7 +196,7 @@ export default function InGameDivorce() {
             </div>
             <div className="relative flex-1">
               <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
-              <button className="absolute top-0 left-0 text-center text-blackmt-5" onClick={() => handleButtonClick("continue-resided")}>I have a lease agreement, utility bills in my name dating back over six months, and my Florida driver’s license showing my current address.</button>
+              <button className="absolute top-[15px] left-0 text-[13px] text-center text-blackmt-5" onClick={() => handleButtonClick("continue-resided")}>I have a lease agreement, utility bills in my name dating back over six months, and my Florida driver’s license showing my current address.</button>
             </div>
           </div>
         </div>
