@@ -1,14 +1,40 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+.background-container {
+    background-image: url('/images/courtroom 2.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-Repeat: "no-repeat";
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 .large-font {
     font-size: 48px; /* Adjust the size as needed */
     font-weight: bold; /* Optional: Make the text bold */
+    margin-top: -110px;
+    margin-left: 90px;
 }
+
 
 @keyframes float {
     0% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
     100% {
         transform: translateY(0);
@@ -17,6 +43,4 @@
 
 .gator-jump {
     animation: float 2s ease-in-out infinite;
-    /* animation-duration: 1.5s;
-    animation-iteration-count: infinite; */
 }
