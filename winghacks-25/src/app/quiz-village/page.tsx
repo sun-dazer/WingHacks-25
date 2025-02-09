@@ -101,6 +101,9 @@ export default function Scenario() {
           )
         )}
       </div>
+      <button className="absolute top-2 right-2 bg-light-grey text-black px-4 py-2 rounded" onClick={() => router.push("/")}>
+        Restart
+      </button>
     </div>
   );
 }
