@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { useUser } from '../UserContext';
 import ReusablePage from './reusable-page';
 import ReusableOptionPage from './reusable-option-page';
-import { useRouter } from 'next/navigation';
 
 export default function InGameDivorce() {
   const router = useRouter();
@@ -162,7 +161,7 @@ export default function InGameDivorce() {
   }
 
   if (screen === "end") {
-    router.push("/end");
+    router.push("/end-game");
   }
 
   //initial screen
