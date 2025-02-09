@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import "./styles.css";
+import {useUser} from '../UserContext';
 
 export default function Scenario() {
   const router = useRouter();
@@ -10,6 +11,7 @@ export default function Scenario() {
   const [direction, setDirection] = useState("idle"); 
   const [isMoving, setIsMoving] = useState(false); 
   const [showPopup, setShowPopup] = useState(true);
+  const { caseType } = useUser();
 
   const handleKeyDown = (e: KeyboardEvent) => {
     let newTop = spritePosition.top;
@@ -59,6 +61,12 @@ export default function Scenario() {
 
   const handleNextClick = () => {
     console.log("Next button clicked");
+    if (caseType === "custody") {
+      router.push("/in-game-custody");
+    }
+    else if (caseType === "divorce") {
+      router.push("/in-game-divorce");
+    }
   };
 
   useEffect(() => {
