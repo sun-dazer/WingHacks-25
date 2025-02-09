@@ -17,7 +17,7 @@ export default function BasicInfo() {
   const handleNextButtonClick = () => {
     setStep(step + 1);
     if (step === 7) {
-      router.push('/settings');
+      router.push('/scenario');
     }
   };
 
