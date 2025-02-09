@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useUser } from '../UserContext';
 import ReusablePage from './reusable-page';
@@ -14,6 +14,12 @@ export default function InGameDivorce() {
 
   //manages toggling between screens
   const [screen, setScreen] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (screen === "end") {
+      router.push("/end-game");
+    }
+  }, [screen, router]);
 
   const handleButtonClick = (screenName: string) => {
     setFadeOut(true);
@@ -160,9 +166,9 @@ export default function InGameDivorce() {
     );
   }
 
-  if (screen === "end") {
-    router.push("/end-game");
-  }
+  // if (screen === "end") {
+  //   router.push("/end-game");
+  // }
 
   //initial screen
   return (
