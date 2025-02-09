@@ -65,18 +65,18 @@ export default function Settings() {
             onClick={handleBackClick}
           />
           <h1 className="inline h1">Getting Started</h1>
-          {/* <button onClick={handleNextButtonClick}>Go to Basic Info Page</button> */}
-          <div>
+            <div>
             <label className="label">What&apos;s Your Name?</label>
             <input
               type="text"
-              value={nameInput}
+              style={{ opacity: 0.5 }}
+            value={nameInput}
               onChange={handleNameChange}
               className="text-center w-[300px] shadow-md"
               placeholder="Name"
             />
             <label className="label">Location</label>
-            <select value={locationInput} onChange={handleLocationChange} className="w-[300px] text-center shadow-md">
+            <select value={locationInput} style={{ opacity: 0.5 }} onChange={handleLocationChange} className="w-[300px] text-center shadow-md">
               <option value="null">*select*</option>
               <option value="florida">Florida</option>
               <option value="georgia">Georgia</option>

@@ -27,18 +27,6 @@ body {
     border-radius: 5px;
 }
 
-/* .card {
-    width: 1000%;
-    max-width: 2000px;
-    height: 80%;
-    max-height: 600px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
-} */
-
 .label {
     text-align: center;
     display: block;
@@ -79,9 +67,9 @@ body {
 }
 
 .transparent-box {
-    background-color: rgba(255, 255, 255, 0.6); /* White with 80% opacity */
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 20px;
     margin-top: 100px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow for better visibility */
-  }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
