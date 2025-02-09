@@ -99,7 +99,7 @@ export default function Settings() {
               </button>
             </div>
             <div className="mb-[40px]">
-              <button className="button" onClick={handleStartButtonClick}>Start Game</button>
+              <button className="button" style={{ background: 'rgb(103, 150, 221)' }} onClick={handleStartButtonClick}>Start Game</button>
             </div>
           </div>
         </div>
