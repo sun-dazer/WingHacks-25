@@ -14,10 +14,10 @@ export default function InGameDivorce() {
   //manages toggling between screens
   const [screen, setScreen] = useState<string | null>(null);
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (screenName: string) => {
     setFadeOut(true);
     setTimeout(() => {
-      setScreen("resided");
+      setScreen(screenName);
     }, 500); // Match the duration of the fade-out animation
   };
 
@@ -116,11 +116,11 @@ export default function InGameDivorce() {
           <div className="flex-1 flex flex-col animate-options-float-in">
             <div className="relative flex-1">
               <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
-              <button className="absolute top-0 left-0 text-center text-black mt-5" onClick={() => setScreen("resided-wrong")}>I have a hotel receipt showing I stayed in Miami for a week six months ago.</button>
+              <button className="absolute top-0 left-0 text-center text-black mt-5" onClick={() => handleButtonClick("resided-wrong")}>I have a hotel receipt showing I stayed in Miami for a week six months ago.</button>
             </div>
             <div className="relative flex-1">
               <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
-              <button className="absolute top-0 left-0 text-center text-blackmt-5" onClick={() => setScreen("continue-resided")}>I have a lease agreement, utility bills in my name dating back over six months, and my Florida driver’s license showing my current address.</button>
+              <button className="absolute top-0 left-0 text-center text-blackmt-5" onClick={() => handleButtonClick("continue-resided")}>I have a lease agreement, utility bills in my name dating back over six months, and my Florida driver’s license showing my current address.</button>
             </div>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function InGameDivorce() {
           <div className="flex-1">
             <div className="relative animate-options-float-in">
               <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble skinny.png" alt="text box" width={661} height={500} />
-              <button className="absolute top-0 left-0 text-center text-black text-2xl mt-5" onClick={handleButtonClick}>Yes, that is correct.</button>
+              <button className="absolute top-0 left-0 text-center text-black text-2xl mt-5" onClick={() => handleButtonClick("resided")}>Yes, that is correct.</button>
             </div>
           </div>
         </div>
