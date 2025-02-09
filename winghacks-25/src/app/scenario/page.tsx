@@ -125,7 +125,7 @@ export default function Scenario() {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
     };
-  }, [spritePosition]);
+  });
 
 
   return (
