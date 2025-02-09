@@ -25,14 +25,14 @@ export default function BasicInfo() {
     router.push('/settings');
   };
 
-  const getTextForStep = (step) => {
+  const getTextForStep = (step: number) => {
     switch (step) {
       case 1:
         return (
           <>
             Hi there! Welcome to Gator Grievances!<br /><br />
-            Here you'll have a chance to experience a court proceeding <br /> from a plaintiff's perspective.<br /><br />
-            Now we'll go through the roles (players) in our game.
+            Here you&apos;ll have a chance to experience a court proceeding <br /> from a plaintiff&apos;s perspective.<br /><br />
+            Now we&apos;ll go through the roles (players) in our game.
           </>
         );
       case 2:
@@ -58,7 +58,7 @@ export default function BasicInfo() {
       case 4:
         return (
           <>
-            A lawyer's primary role is to advise clients on their legal rights, <br />
+            A lawyer&apos;s primary role is to advise clients on their legal rights, <br />
             represent them in legal matters, and advocate for their interests in <br />
             court. <br /> <br />
             They interpret laws and present evidence to achieve the best <br />
@@ -79,7 +79,7 @@ export default function BasicInfo() {
           <>
             In this game, you will be presented a few questions that a judge may ask <br />
             you in a court proceeding for a divorce or custody case. <br /> <br />
-            You'll then be given a few answer options to respond to the judge, BUT only <br />
+            You&apos;ll then be given a few answer options to respond to the judge, BUT only <br />
             one will allow the judge to proceed with the case based on evidence <br />
             requirements of the law.
           </>
@@ -88,7 +88,7 @@ export default function BasicInfo() {
         return (
           <>
             <br /> Ready? <br /><br />
-            Let's get started!
+            Let&apos;s get started!
           </>
         )
       default:
@@ -100,7 +100,7 @@ export default function BasicInfo() {
     }
   };
 
-  const getImageSrcForStep = (step) => {
+  const getImageSrcForStep = (step: number) => {
     switch (step) {
       case 2:
         return '/images/gator 3.png';

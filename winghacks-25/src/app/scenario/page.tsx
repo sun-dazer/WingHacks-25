@@ -10,7 +10,6 @@ export default function Scenario() {
   const router = useRouter();
   const [spritePosition, setSpritePosition] = useState({ top: 75, left: 1200 });
   const [direction, setDirection] = useState("idle");
-  const [isMoving, setIsMoving] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
   const [currentLocation, setCurrentLocation] = useState("map");
   const [visited, setVisited] = useState<Map<string, boolean>>(new Map([
@@ -70,26 +69,21 @@ export default function Scenario() {
       case "ArrowUp":
         newTop -= 3;
         setDirection("up");
-        setIsMoving(true);
         break;
       case "ArrowDown":
         newTop += 3;
         setDirection("down");
-        setIsMoving(true);
         break;
       case "ArrowLeft":
         newLeft -= 3;
         setDirection("left");
-        setIsMoving(true);
         break;
       case "ArrowRight":
         newLeft += 3;
         setDirection("right");
-        setIsMoving(true);
         break;
       case "a":
         setDirection("dance");
-        setIsMoving(true);
         break;
       case " ":
         setCurrentLocation("map");
@@ -106,7 +100,6 @@ export default function Scenario() {
 
   const handleKeyUp = (e: KeyboardEvent) => {
     if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
-      setIsMoving(false);
       setDirection("idle");
     }
   };

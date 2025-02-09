@@ -82,13 +82,13 @@ export default function InGameDivorce() {
 
   if (screen === "no-fault-continue") {
     return (
-      <ReusablePage screenName="mental?" bottomText="Florida is a no-fault divorce state, meaning you only need to state that the marriage is irretrievably broken or that one of the parties is mentally incapacitated. You don't need to prove fault or wrongdoing by the other party." handleButtonClick={handleButtonClick} fontSize="15" buttonText="Continue"/>
+      <ReusablePage screenName="mental?" bottomText="Florida is a no-fault divorce state, meaning you only need to state that the marriage is irretrievably broken or that one of the parties is mentally incapacitated. You don&apos;t need to prove fault or wrongdoing by the other party." handleButtonClick={handleButtonClick} fontSize="15" buttonText="Continue"/>
     );
   }
 
   if (screen === "mental?") {
     return (
-      <ReusableOptionPage screenName1="mental-yes" screenName2="financial" bottomText="Is there anything else you would like to add?" handleButtonClick={handleButtonClick} fontSize1="15" fontSize2="20" text1="My spouse has also been mentally spiraling for a few years now. He's going crazy!" text2="No, Your Honor."/>
+      <ReusableOptionPage screenName1="mental-yes" screenName2="financial" bottomText="Is there anything else you would like to add?" handleButtonClick={handleButtonClick} fontSize1="15" fontSize2="20" text1="My spouse has also been mentally spiraling for a few years now. He&apos;s going crazy!" text2="No, Your Honor."/>
     );
   }
 
@@ -100,7 +100,7 @@ export default function InGameDivorce() {
 
   if (screen === "mental-wrong") {
     return (
-      <ReusablePage screenName="mental-yes" bottomText="A general practitioner's note on stress does not meet the requirement for proving mental incapacity. Do you have records from a psychiatrist or any legal determinations of incapacity?" handleButtonClick={handleButtonClick} fontSize="15" buttonText="Try Again"/>
+      <ReusablePage screenName="mental-yes" bottomText="A general practitioner&apos;s note on stress does not meet the requirement for proving mental incapacity. Do you have records from a psychiatrist or any legal determinations of incapacity?" handleButtonClick={handleButtonClick} fontSize="15" buttonText="Try Again"/>
     );
   }
 
@@ -154,7 +154,7 @@ export default function InGameDivorce() {
                       </div>
                       <div className="relative flex-1">
                         <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
-                        <button className={`text-[15px] absolute top-0 left-0 text-center text-black mt-[7px]`} onClick={() => handleButtonClick("financial-wrong")}>I have my financial statement but not one of my bank accounts because it's separate from my marital finances.</button>
+                        <button className={`text-[15px] absolute top-0 left-0 text-center text-black mt-[7px]`} onClick={() => handleButtonClick("financial-wrong")}>I have my financial statement but not one of my bank accounts because it&apos;s separate from my marital finances.</button>
                       </div>
                     </div>
                   </div>

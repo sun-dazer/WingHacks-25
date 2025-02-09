@@ -1,9 +1,7 @@
 "use client"
 import React from 'react';;
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Image from 'next/image';
-import { useUser } from '../UserContext';
 
 interface ReusableOptionPageProps {
   screenName1: string;
@@ -17,12 +15,7 @@ interface ReusableOptionPageProps {
 }
 
 const ReusableOptionPage: React.FC<ReusableOptionPageProps> = ({ screenName1, screenName2, bottomText, handleButtonClick, fontSize1, fontSize2, text1, text2}) => {
-    const router = useRouter();
-    const { name } = useUser();
-    const [fadeOut, setFadeOut] = useState(false);
-
-    //manages toggling between screens
-    const [screen, setScreen] = useState<string | null>(null);
+  const [fadeOut] = useState(false);
 
   return (
     <div className="courtroom-background-container">
