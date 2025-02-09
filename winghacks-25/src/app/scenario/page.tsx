@@ -9,7 +9,8 @@ export default function Scenario() {
   };
 
   return (
-    <div className="map-background-container" >
+    <div className="map-background-container">
+      <
     </div>
   );
 }
