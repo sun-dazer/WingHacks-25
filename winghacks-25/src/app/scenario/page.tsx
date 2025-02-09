@@ -3,75 +3,118 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import "./styles.css";
-import {useUser} from '../UserContext';
+
 
 export default function Scenario() {
   const router = useRouter();
   const [spritePosition, setSpritePosition] = useState({ top: 75, left: 1200 });
-  const [direction, setDirection] = useState("idle"); 
-  const [isMoving, setIsMoving] = useState(false); 
+  const [direction, setDirection] = useState("idle");
+  const [isMoving, setIsMoving] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
-  const { caseType } = useUser();
+  const [currentLocation, setCurrentLocation] = useState("map");
+  const [visited, setVisited] = useState<Map<string, boolean>>(new Map([
+    ["house1", false],
+    ["circuit", false],
+    ["shops", false],
+    ["lawyer", false],
+    ["court", false]
+  ]));
+
+  type Location = {
+    top: number;
+    bottom: number;
+    left: number;
+    right: number;
+    background: string;
+    message: string;
+    visited: boolean;
+  };
+  
+  type Locations = {
+    [key: string]: Location;
+  };
+  
+  const locations: Locations = {
+    house1: { top: -15, bottom: 147, left: 665, right: 1085, background: "/images/house1.png", message: " Step 1: Complete the Paperwork \nBegin by preparing the necessary documents, including the petition.\nWhat is a petition? A petition is a formal written request asking the court to take legal action", visited: false },
+    circuit: { top: 450, bottom: 576, left: 930, right: 1143, background: "/images/office.png", message: "Step 2: File Your Case\nOnce you have completed the petition, you must file it with the clerk of the circuit court in your local jurisdiction. This officially opens your case.", visited: false },
+    shops: { top: 261, bottom: 372, left: 399, right: 846, background: "/images/shop.png", message: "Step 3: Notify the Other Party\nAfter filing, you are required to notify the other party. This process, known as ‘Service’, ensures that the other party has been formally informed of the case.", visited: false},
+    lawyer: { top: 405, bottom: 595, left: 640, right: 820, background: "/images/lawyer.png", message: "Step 4: Mandatory Disclosure\nBoth parties are required to exchange specific financial and legal documents as part of the Mandatory Disclosure process.", visited: false },
+    court: { top: 537, bottom: 618, left: 210, right: 390, background: "/images/court.png", message: "Step 5: Schedule Your Court Date\nThe court process typically includes a hearing for any motions filed, and a final hearing for cases that are uncontested or resolved by default or trial for contested cases", visited: false }};
+
+
+ const checkLocation = (top: number, left: number) => {
+    for (const key of Object.keys(locations)) {
+      const loc = locations[key];
+      if (top >= loc.top && top <= loc.bottom && left >= loc.left && left <= loc.right) {
+        console.log("Current Location: ", key);
+        console.log("Visited: ", visited.get(key));
+        if (visited.get(key) === false) {
+          setCurrentLocation(key);
+          setShowPopup(true);
+          setVisited(new Map(visited.set(key, true))); // Update the state
+        }
+        return;
+      }
+    }
+    setCurrentLocation("map");
+  };
+
 
   const handleKeyDown = (e: KeyboardEvent) => {
     let newTop = spritePosition.top;
     let newLeft = spritePosition.left;
 
-    switch (e.key) { // handles cases
+
+    switch (e.key) {
       case "ArrowUp":
-        newTop -= 3; 
+        newTop -= 3;
         setDirection("up");
-        setIsMoving(true); 
+        setIsMoving(true);
         break;
       case "ArrowDown":
-        newTop += 3; 
+        newTop += 3;
         setDirection("down");
-        setIsMoving(true); 
+        setIsMoving(true);
         break;
       case "ArrowLeft":
-        newLeft -= 3; 
+        newLeft -= 3;
         setDirection("left");
-        setIsMoving(true); 
+        setIsMoving(true);
         break;
       case "ArrowRight":
-        newLeft += 3; 
+        newLeft += 3;
         setDirection("right");
-        setIsMoving(true); 
+        setIsMoving(true);
         break;
-      case "a": // secret dance button
-        setDirection("dance"); 
+      case "a":
+        setDirection("dance");
         setIsMoving(true);
         break;
       case " ":
-        setShowPopup(false); 
-        break;
+        setCurrentLocation("map");
+        setShowPopup(false);
+        return;
       default:
         return;
     }
-
     setSpritePosition({ top: newTop, left: newLeft });
+    checkLocation(newTop, newLeft);
+    //console.log("top: ", newTop, "left: ", newLeft);
   };
+
 
   const handleKeyUp = (e: KeyboardEvent) => {
     if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
-      setIsMoving(false); 
-      setDirection("idle"); 
+      setIsMoving(false);
+      setDirection("idle");
     }
   };
 
-  const handleNextClick = () => {
-    console.log("Next button clicked");
-    if (caseType === "custody") {
-      router.push("/in-game-custody");
-    }
-    else if (caseType === "divorce") {
-      router.push("/in-game-divorce");
-    }
-  };
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
+
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
@@ -79,11 +122,14 @@ export default function Scenario() {
     };
   }, [spritePosition]);
 
+
   return (
-    <div className="map-background-container">
-      <Image
+    <div className="map-background-container" style={{
+      backgroundImage: `url(${currentLocation === "map" ? "/images/Map.png" : locations[currentLocation].background})`
+    }}>
+      {!showPopup && (<Image
         className="GatorSpawn"
-        src={`/images/${direction === "idle" ? "pixil-frame-0 (2).png" : `${direction}.gif`}`} 
+        src={`/images/${direction === "idle" ? "pixil-frame-0 (2).png" : `${direction}.gif`}`}
         alt="Idle"
         width={150}
         height={35}
@@ -92,42 +138,28 @@ export default function Scenario() {
           left: `${spritePosition.left}px`,
         }}
       />
+      )}
+
 
       {showPopup && (
         <div className="popup-container">
           <Image
             className="popup-box"
-            src="/images/text box larger.png" 
+            src="/images/text box larger.png"
             alt="Text Box"
             width={300}
             height={100}
           />
           <div className="popup-text">
-          Welcome to Pre-Court Preparation! Here, we will guide you through the initial steps you'll need to complete before your court hearings.
-          To explore each step, use your arrow keys to move the gator to different locations and learn more! Press the space bar to close pop-ups..
-
+            {currentLocation === "map" ? "Welcome to Pre-Court Preparation! Here, we will guide you through the initial steps you'll need to complete before your court hearings. To explore each step, use your arrow keys to move the gator to different locations and learn more! Press the space bar to close pop-ups." : locations[currentLocation].message + "\nPress the space bar to return."}
           </div>
-
-          <Image
-            className="excl-mark"
-            src="/images/excl mark.png"
-            alt="Excl"
-            width={30}
-            height={30}
-          />
         </div>
       )}
-      <div className="next-button-container" onClick={handleNextClick}>
-        <Image
-          className="next-button"
-          src="/images/forward.png"
-          alt="Next"
-          width={50}
-          height={50}
-        />
-      </div>
     </div>
   );
 }
+
+
+
 
 
