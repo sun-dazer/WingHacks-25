@@ -65,7 +65,7 @@ export default function Scenario() {
 
   return (
     <div className="map-background-container">
-      <
+      <Image src="/path/to/image.png" alt="Description" width={100} height={100} />
     </div>
   );
 }
