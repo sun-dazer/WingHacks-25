@@ -16,8 +16,8 @@ export default function InGameDivorce() {
   const handleButtonClick = (screenName: string) => {
     setFadeOut(true);
     setTimeout(() => {
-      setScreen(screenName);
       setFadeOut(false);
+      setScreen(screenName);
     }, 500); 
   };
 
@@ -135,13 +135,31 @@ export default function InGameDivorce() {
 
   if (screen === "no-fault") {
     return (
-      <div>
-        <h1>Florida is a no-fault divorce state. Are you claiming that the marriage is irretrievably broken or that one party has been mentally incapacitated for at least three years?</h1>
-        <p>Well, we just don’t get along anymore.</p>
-        <button onClick={() => setScreen("no-fault-wrong")}>Option 1</button>
-        <p>Your Honor, I have submitted a sworn affidavit outlining the conflicts in our marriage, including ongoing disputes over finances and lifestyle choices. Despite attempts at counseling, we have been unable to resolve these issues.</p>
-        <button onClick={() => setScreen("no-fault-continue")}>Option 2</button>
+      <div className="courtroom-background-container">
+        <div className={`flex justify-center ${fadeOut ? 'fade-out' : ''}`}>
+        <div className="flex flex-col mt-[150px] ">
+          <div className="flex-1 flex flex-row">
+            <div className="flex-1 mr-10">
+              <Image className="animate-float-right" src="/images/judge 2.png" alt="judge" width={500} height={500} />
+            </div>
+            <div className="flex-1 flex flex-col animate-options-float-in">
+              <div className="relative flex-1">
+                <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
+                <button className="absolute top-0 left-0 text-[10px] text-center text-black mt-5" onClick={() => handleButtonClick("no-fault-continue")}>I have submitted a sworn affidavit explaining the conflicts in our marriage, including a lot of arguments over finances and lifestyle choices. Despite attempts at counseling, we have been unable to resolve these issues.</button>
+              </div>
+              <div className="relative flex-1">
+                <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
+                <button className="absolute top-[5px] left-0 text-[13px] text-center text-black mt-5" onClick={() => handleButtonClick("no-fault-wrong")}>Well, we just don’t get along anymore. I really thought he was the love of my life, but I guess not. He is just not the right person for me.</button>
+              </div>
+            </div>
+          </div>
+          <div className="flex-1 relative">
+            <Image className="absolute top-0 left-0 transform scale-x-125 transform scale-y-80 animate-textbox-float-right " src="/images/text box.png" alt="text box" width={661} height={500} />
+            <h1 className="absolute top-[23px] left-0 w-full text-center text-black text-[20px] animate-float-right">Florida is a no-fault divorce state. Are you claiming that the marriage is irretrievably broken or that one party has been mentally incapacitated for at least three years?</h1>
+          </div>
+        </div>
       </div>
+    </div>
     );
   }
 

@@ -74,7 +74,7 @@ body {
 
 .animate-float-in {
   opacity: 0; 
-  animation: optionsFloatIn ease-out 1s forwards;
+  animation: optionsFloatIn 1s ease-out 3s forwards;
 }
 
 @keyframes fadeOut {
