@@ -41,7 +41,7 @@ const ReusableOptionPage: React.FC<ReusableOptionPageProps> = ({ screenName1, sc
                 </div>
                 <div className="relative flex-1">
                   <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble fat.png" alt="text box" width={661} height={500} />
-                  <button className={`absolute top-[15px] left-0 text-[${fontSize2}px] text-center text-black mt-5`} onClick={() => handleButtonClick(screenName2)}>{text2}</button>
+                  <button className={`text-[${fontSize2}px] absolute top-0 left-0 text-center text-black mt-5`} onClick={() => handleButtonClick(screenName2)}>{text2}</button>
                 </div>
               </div>
             </div>

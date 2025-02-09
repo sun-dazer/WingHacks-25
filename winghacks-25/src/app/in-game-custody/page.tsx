@@ -5,6 +5,7 @@ import Image from 'next/image';
 import ReusablePage from './reusable-page';
 import ReusableOptionPage from './reusable-option-page';
 import { useRouter } from 'next/navigation';
+import {useUser} from '../UserContext';
 
 export default function InGameCustody() {
   //manages toggling between screens
@@ -24,27 +25,28 @@ export default function InGameCustody() {
   //************************ ALL THE SCREENS DEFINED ****************************** */
   if (screen === "proving-drug") {
     return (
-      <ReusableOptionPage screenName1="proving-drug-wrong" screenName2="drug-test" bottomText="Okay, I understand. What proof do you have of this drug usage claim?" handleButtonClick={handleButtonClick} fontSize1="2xl" fontSize2="2xl" text1="He always smells like weed. He has a pile of cash that he uses to go buy weed that’s under his bed." text2="Everyone just knows about it! His new girl knows, my mom knows, his friends know… it’s just common knowledge!" />
+      <ReusableOptionPage screenName1="proving-drug-wrong" screenName2="drug-test" bottomText="Okay, I understand. What proof do you have of this drug usage claim?" handleButtonClick={handleButtonClick} fontSize1="2xl" fontSize2="2xl" text1="He always smells like weed. He has a pile of cash that he uses to go buy weed that’s under his bed." text2="He used to go to rehab for a few years, but his old habits are coming back." />
     );
   }
     
   if (screen === "drug-test") {
-    <ReusablePage screenName="order-drug-test" bottomText="I'm sorry, but you need more concrete proof. Do you have any other evidence?" handleButtonClick={handleButtonClick} />
+    <ReusablePage screenName="order-drug-test" bottomText="Perfect. For the best interest of the child, we have to consider the mental and physical health of the parents"
+handleButtonClick={handleButtonClick} buttonText="Order Drug Test" fontSize="10"/>
   }
 
   if (screen === "order-drug-test") {
-    <ReusablePage screenName="end" bottomText="I'm sorry, but you need more concrete proof. Do you have any other evidence?" handleButtonClick={handleButtonClick} />
+    <ReusablePage screenName="end" bottomText="The test came back positive! The court has deemed your partner unfit to care for your child." handleButtonClick={handleButtonClick} fontSize="15"/>
   }
 
   if (screen === "initial-wrong") {
     return (
-      <ReusablePage screenName="initial" bottomText="I'm sorry, but you need specific legal grounds for a divorce. Emotions alone are not enough." handleButtonClick={handleButtonClick} />
+      <ReusablePage screenName="initial" bottomText="I'm sorry, but you need specific legal grounds for a divorce. Emotions alone are not enough." handleButtonClick={handleButtonClick} fontSize="20" buttonText="Try Again"/>
     );
   }
 
-  if (screen === "living-with") {
+  if (screen === "new-options") {
     return (
-      <ReusableOptionPage screenName1="living-with-wrong" screenName2="proving-drug" bottomText="Choose an option." handleButtonClick={handleButtonClick} fontSize1="2xl" fontSize2="2xl" text1="I don’t want my child to live with him because he is a bad person." text2="I don’t want my child to live with him because he has a drug problem." />
+      <ReusableOptionPage screenName1="living-with-wrong" screenName2="proving-drug" bottomText="What grounds are you claming you need sole custody on?" handleButtonClick={handleButtonClick} fontSize1="2xl" fontSize2="2xl" text1="I don’t want my child to live with him because his new girl is physically violent." text2="I don’t want my child to live with him because he has a drug problem." />
     );
   }
 
@@ -55,18 +57,18 @@ export default function InGameCustody() {
 
   if (screen === "proving-drug-wrong") {
     return (
-      <ReusableOptionPage screenName1="proving-drug" screenName2="living-with" bottomText="I'm sorry, but you need more concrete proof. Do you have any other evidence?" handleButtonClick={handleButtonClick} fontSize1="2xl" fontSize2="2xl" text1="Yes, let me try again." text2="No, but I do have another reason." />
+      <ReusableOptionPage screenName1="proving-drug" screenName2="living-with" bottomText="I'm sorry, but you need more concrete proof. Do you have any other evidence?" handleButtonClick={handleButtonClick} fontSize1="20" fontSize2="20" text1="Yes, let me try again." text2="No, but I do have another reason." />
     );
   }
 
   if (screen === "initial") {
     return (
-      <ReusableOptionPage screenName1="initial-wrong" screenName2="proving-drug" bottomText="Choose an option." handleButtonClick={handleButtonClick} fontSize1="2xl" fontSize2="2xl" text1="I just hate who he is as a person! He is crazy and I hate his guts. That’s why I divorced him." text2="I believe he's dealing with a drug problem that stops him from making good judgments about our child." />
+      <ReusableOptionPage screenName1="initial-wrong" screenName2="proving-drug" bottomText="Why would you like to do so?" handleButtonClick={handleButtonClick} fontSize1="2xl" fontSize2="15" text1="I just hate who he is as a person! He is crazy and I hate his guts. That’s why I divorced him." text2="He's dealing with a drug problem that stops him from making good judgments about our child." />
     );
   }
 
   if (screen === "end") {
-    router.push("/end");
+    router.push("/end-game");
   }
 
   //defines the initial screen
@@ -81,7 +83,7 @@ export default function InGameCustody() {
               <div className="flex-1">
                 <div className="relative animate-options-float-in">
                   <Image className="absolute top-0 left-0 transform scale-x-125" src="/images/speech bubble skinny.png" alt="text box" width={661} height={500} />
-                  <button className="absolute top-0 left-0 text-center text-black text-2xl mt-5" onClick={() => handleButtonClick("initial")}>Yes, that is what I want.</button>
+                  <button className="absolute top-0 left-0 text-center text-black text-[20px] mt-5" onClick={() => handleButtonClick("initial")}>Yes, that is what I want.</button>
                 </div>
               </div>
             </div>

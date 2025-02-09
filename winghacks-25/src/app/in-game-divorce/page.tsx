@@ -161,7 +161,7 @@ export default function InGameDivorce() {
   }
 
   if (screen === "end") {
-    router.push("/end");
+    router.push("/end-game");
   }
 
   //initial screen
