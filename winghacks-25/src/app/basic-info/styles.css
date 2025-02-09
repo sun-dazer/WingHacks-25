@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+.h2 {
+    font-size: 14px;
+    margin: 32px;
+    padding: 0;
+}
+
 .inline {
     display: inline-block;
     vertical-align: middle;
@@ -12,6 +18,7 @@
 body,
 html {
     height: 100%;
+    width: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -20,14 +27,26 @@ html {
     background-color: #ffffff;
 }
 
-.head-text {
+.image-with-margins {
     position: relative;
+    margin: -150px 25px 200px 50px;
 }
 
-.text-on-image {
-    position: absolute;
-    right: 50%;
-    left: 50%;
-    bottom: 15%;
-    transform: translate(-50%, -50%);
+.button {
+    background: lightgray;
+    color: black;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.transparent-box {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
