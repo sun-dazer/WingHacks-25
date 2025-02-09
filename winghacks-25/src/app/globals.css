@@ -137,6 +137,17 @@ body {
     overflow: hidden;
 }
 
+.map-scenario-background-container {
+  position: relative;
+  background-image: url('/images/Map.png');
+  background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-Repeat: "no-repeat";
+    height: 100vw;
+    overflow: hidden;
+}
+
 .overlay-content {
   position: absolute;
   top: 50%;
