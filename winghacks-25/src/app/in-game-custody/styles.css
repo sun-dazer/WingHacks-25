@@ -1,0 +1,68 @@
+.room-1-background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/images/courtroom.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.room-2-background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/images/courtroom 2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.image-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.judge-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.judge-desk-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 30;
+    right: 0;
+}
+
+.bottom-center {
+    position: absolute;
+    bottom: 50;
+    left: 325;
+}
+
+.center-right-1 {
+    position: absolute;
+    bottom: 300;
+    left: 950;
+}
+
+.center-right-2 {
+    position: absolute;
+    bottom:500;
+    left: 950;
+}
