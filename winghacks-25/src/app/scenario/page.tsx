@@ -87,7 +87,9 @@ export default function Scenario() {
             height={100}
           />
           <div className="popup-text">
-            This is some sample text inside the popup box.
+          Welcome to Pre-Court Preparation! Here, we will guide you through the initial steps you'll need to complete before your court hearings.
+          To explore each step, use your arrow keys to move the gator to different locations and learn more! Press the space bar to close pop-ups..
+
           </div>
 
           <Image
