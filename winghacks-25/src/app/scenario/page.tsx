@@ -9,7 +9,7 @@ export default function Scenario() {
   const [spritePosition, setSpritePosition] = useState({ top: 75, left: 1200 });
   const [direction, setDirection] = useState("idle"); 
   const [isMoving, setIsMoving] = useState(false); 
-  const [showPopup, setShowPopup] = useState(true); 
+  const [showPopup, setShowPopup] = useState(true);
 
   const handleKeyDown = (e: KeyboardEvent) => {
     let newTop = spritePosition.top;

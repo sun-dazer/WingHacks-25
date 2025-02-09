@@ -1,9 +1,11 @@
-html, body {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden; /* Prevents scrolling */
+    overflow: hidden;
+    /* Prevents scrolling */
 }
 
 .background-container {
@@ -22,20 +24,52 @@ html, body {
 }
 
 .large-font {
-    font-size: 48px; /* Adjust the size as needed */
-    font-weight: bold; /* Optional: Make the text bold */
-    margin-top: -110px;
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: -100px;
     margin-left: 90px;
 }
 
+.text-box {
+    position: absolute;
+    width: 350px;
+    height: 10px;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.button {
+    background: lightgray;
+    color: black;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -50px;
+}
 
 @keyframes float {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-30px);
     }
+
     100% {
         transform: translateY(0);
     }
