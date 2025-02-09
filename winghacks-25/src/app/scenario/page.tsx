@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import "./styles.css";
+import {useUser} from "../UserContext";
 
 
 export default function Scenario() {
@@ -19,6 +20,7 @@ export default function Scenario() {
     ["lawyer", false],
     ["court", false]
   ]));
+  const {caseType} = useUser();
 
   type Location = {
     top: number;
@@ -27,7 +29,6 @@ export default function Scenario() {
     right: number;
     background: string;
     message: string;
-    visited: boolean;
   };
   
   type Locations = {
@@ -35,19 +36,19 @@ export default function Scenario() {
   };
   
   const locations: Locations = {
-    house1: { top: -15, bottom: 147, left: 665, right: 1085, background: "/images/house1.png", message: " Step 1: Complete the Paperwork \nBegin by preparing the necessary documents, including the petition.\nWhat is a petition? A petition is a formal written request asking the court to take legal action", visited: false },
-    circuit: { top: 450, bottom: 576, left: 930, right: 1143, background: "/images/office.png", message: "Step 2: File Your Case\nOnce you have completed the petition, you must file it with the clerk of the circuit court in your local jurisdiction. This officially opens your case.", visited: false },
-    shops: { top: 261, bottom: 372, left: 399, right: 846, background: "/images/shop.png", message: "Step 3: Notify the Other Party\nAfter filing, you are required to notify the other party. This process, known as ‘Service’, ensures that the other party has been formally informed of the case.", visited: false},
-    lawyer: { top: 405, bottom: 595, left: 640, right: 820, background: "/images/lawyer.png", message: "Step 4: Mandatory Disclosure\nBoth parties are required to exchange specific financial and legal documents as part of the Mandatory Disclosure process.", visited: false },
-    court: { top: 537, bottom: 618, left: 210, right: 390, background: "/images/court.png", message: "Step 5: Schedule Your Court Date\nThe court process typically includes a hearing for any motions filed, and a final hearing for cases that are uncontested or resolved by default or trial for contested cases", visited: false }};
+    house1: { top: -15, bottom: 147, left: 665, right: 1085, background: "/images/house inside.png", message: " Step 1: Complete the Paperwork \nBegin by preparing the necessary documents, including the petition.\nWhat is a petition? A petition is a formal written request asking the court to take legal action"},
+    circuit: { top: 9, bottom: 123, left: 186, right: 366, background: "/images/panda inside.png", message: "Step 2: File Your Case\nOnce you have completed the petition, you must file it with the clerk of the circuit court in your local jurisdiction. This officially opens your case."},
+    shops: { top: 261, bottom: 372, left: 399, right: 846, background: "/images/phone inside.png", message: "Step 3: Notify the Other Party\nAfter filing, you are required to notify the other party. This process, known as ‘Service’, ensures that the other party has been formally informed of the case."},
+    lawyer: { top: 450, bottom: 576, left: 930, right: 1143, background: "/images/law inside.png", message: "Step 4: Mandatory Disclosure\nBoth parties are required to exchange specific financial and legal documents as part of the Mandatory Disclosure process."},
+    court: { top: 537, bottom: 618, left: 210, right: 390, background: "/images/courtroom.png", message: "Step 5: Schedule Your Court Date\nThe court process typically includes a hearing for any motions filed, and a final hearing for cases that are uncontested or resolved by default or trial for contested cases"}};
 
 
  const checkLocation = (top: number, left: number) => {
     for (const key of Object.keys(locations)) {
       const loc = locations[key];
       if (top >= loc.top && top <= loc.bottom && left >= loc.left && left <= loc.right) {
-        console.log("Current Location: ", key);
-        console.log("Visited: ", visited.get(key));
+        //console.log("Current Location: ", key);
+        //console.log("Visited: ", visited.get(key));
         if (visited.get(key) === false) {
           setCurrentLocation(key);
           setShowPopup(true);
@@ -99,7 +100,7 @@ export default function Scenario() {
     }
     setSpritePosition({ top: newTop, left: newLeft });
     checkLocation(newTop, newLeft);
-    //console.log("top: ", newTop, "left: ", newLeft);
+    console.log("top: ", newTop, "left: ", newLeft);
   };
 
 
@@ -109,6 +110,17 @@ export default function Scenario() {
       setDirection("idle");
     }
   };
+
+  const handleNextClick = () => {
+    console.log("Next button clicked");
+    if (caseType === "custody") {
+      router.push("/in-game-custody");
+    }
+    else if (caseType === "divorce") {
+      router.push("/in-game-divorce");
+    }
+  };
+
 
 
   useEffect(() => {
@@ -153,11 +165,28 @@ export default function Scenario() {
           <div className="popup-text">
             {currentLocation === "map" ? "Welcome to Pre-Court Preparation! Here, we will guide you through the initial steps you'll need to complete before your court hearings. To explore each step, use your arrow keys to move the gator to different locations and learn more! Press the space bar to close pop-ups." : locations[currentLocation].message + "\nPress the space bar to return."}
           </div>
-        </div>
-      )}
-    </div>
-  );
-}
+
+          <Image
+            className="excl-mark"
+            src="/images/excl mark.png"
+            alt="Excl"
+            width={30}
+            height={30}
+                    />
+                  </div>
+                )}
+                <div className="next-button-container" onClick={handleNextClick}>
+                  <Image
+                    className="next-button"
+                    src="/images/forward.png"
+                    alt="Next"
+                    width={50}
+                    height={50}
+                  />
+                </div>
+              </div>
+            );
+          }
 
 
 
