@@ -21,7 +21,7 @@ export default function InGameCustody() {
             flexDirection: 'column' 
         }}>
             <div style={{ position: 'relative', width: '500px', height: '500px', marginTop: '100px' }}>
-                <div style={{ position: 'absolute', zIndex: 1, top: '0px', left: '30px', width: '400px', height: '400px' }} className="gator-jump">
+                <div style={{ position: 'absolute', zIndex: 1, top: '0px', left: '10px', width: '400px', height: '400px' }} className="gator-jump">
                     <Image 
                         src="/images/gator 3.png" 
                         alt="gator" 
@@ -29,7 +29,7 @@ export default function InGameCustody() {
                         objectFit="contain" 
                     />
                 </div>
-                <div style={{ position: 'absolute', zIndex: 2, top: '50px', width: '500px', height: '500px' }}>
+                <div style={{ position: 'absolute', zIndex: 2, top: '30px', width: '500px', height: '500px' }}>
                     <Image 
                         src="/images/desk for arguer.png" 
                         alt="desk" 
@@ -37,10 +37,22 @@ export default function InGameCustody() {
                         objectFit="contain" 
                     />
                 </div>
+                <div style={{position:'absolute', width: '350px', height: '150px', top: '415px', left: '70px',zIndex: 1}}>
+                    <Image
+                        src="/images/text box.png"
+                        alt="back"
+                        width={650}
+                        height={375}
+                        />
+                        <h1 className="large-font">You Win!</h1>
+                        <div style={{ position:'absolute', display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                            <button style={{ marginLeft: '45px' }} onClick={() => setScreen ("in-game-custody")}>Continue</button>
+                            <button style={{ marginRight: '45px' }} onClick={() => window.location.href = '/ge'}>Restart</button>
+                        </div> 
+                </div>
             </div>
-            <h1 className="large-font">You Win!</h1>
-            <button onClick={() => setScreen("initial")}>Continue</button>
-            <button onClick={() => setScreen("initial")}>Restart</button>
+            
+            
             {/* {screen && <p>Current screen: {screen}</p>} */}
         </div>
     );
